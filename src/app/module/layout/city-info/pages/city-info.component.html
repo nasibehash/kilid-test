@@ -1,0 +1,66 @@
+<div class="fluid-container filter p-3">
+  <mat-form-field appearance="outline" class="ms-3">
+    <mat-label>خرید</mat-label>
+    <mat-select (ngModel)="typeSelected" (selectionChange)="onSelect($event.value)">
+      <mat-option value="buy"> آگهی خرید و فروش</mat-option>
+      <mat-option value="rent">آگهی رهن و اجاره</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="ms-3">
+    <mat-label>نوع ملک</mat-label>
+    <mat-select multiple (ngModel)="prpSelected" (selectionChange)="onSelectPrp($event.value)">
+      <mat-option *ngFor="let item of propertyList" [value]="item.value"> {{item.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="container  p-3">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <aside class="sidebar">
+        <div class="mb-5">
+          <a _ngcontent-kilid-portal-c54="" id="banner" target="_blank"
+            href="https://kilid.com/post-real-estate-listings/buy/step1?utm_source=Domestic_Banner&amp;utm_medium=cpc&amp;utm_campaign=domestic_ad_IL"
+            style="width: 250px; height: 250px;"><img _ngcontent-kilid-portal-c54=""
+              class="native-ad-image ng-star-inserted"
+              src="https://www.kilidstatic.com/photos/large/gif_9de28bc4-fba7-4738-bdb0-46cfda7a0625.gif" alt="">
+
+          </a>
+        </div>
+        <div>
+          <a _ngcontent-kilid-portal-c54="" target="_blank" href="https://kilid.com/find-me-a-home/buy/step1"
+            style="width: 240px; height: 400px;"><img _ngcontent-kilid-portal-c54=""
+              class="native-ad-image ng-star-inserted"
+              src="https://www.kilidstatic.com/photos/large/gif_a130de93-200a-4703-80d4-bfb29e3436c1.gif" alt="">
+          </a>
+        </div>
+
+      </aside>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9">
+      <div>
+        <div class="clearfix mt-3">
+          <span class="float-start"></span>
+          <span class="float-end">
+            <p>{{cityInfo?.titleToShow}}</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="row" (window:scroll)="onScroll()">
+
+        <div class="col-lg-4 col-md-4 col-sm-4" *ngFor="let item of cardInfo">
+          <app-city-card [cardInfo]="item"></app-city-card>
+        </div>
+        <!-- <div style="display: none;">
+          <a _ngcontent-kilid-portal-c55="" id="banner" target="_blank" class="flex-row native-ad-holder ng-star-inserted" href="https://edge-offices.com/" style="width: 728px; height: 90px;"><img _ngcontent-kilid-portal-c55="" class="native-ad-image ng-star-inserted" src="https://www.kilidstatic.com/photos/large/gif_089a9d99-9053-471c-a22a-e4c52ba49940.gif" alt=""></a>
+        </div> -->
+        <div class="text-center mt-5">
+          <button mat-raised-button color="accent">ملک بیشتر</button>
+        </div>
+      </div>
+    </div>
+    <!-- ------ -->
+
+  </div>
+</div>

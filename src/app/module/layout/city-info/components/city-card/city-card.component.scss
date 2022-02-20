@@ -1,0 +1,28 @@
+.card{
+  position: relative;
+
+  margin: 5px;
+  .card-title{
+    position: absolute;
+    top: 54%;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 13px;
+    background: linear-gradient(0deg,rgba(0,0,0,.8) 0,rgba(0,0,0,.001));
+
+  }
+  img{
+    min-height: 165px;
+    max-height: 165px;
+
+  }
+  .price{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #003d73;
+  }
+  .contact-btn{
+    text-align: end;
+  }
+}

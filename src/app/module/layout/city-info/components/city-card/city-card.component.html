@@ -1,0 +1,17 @@
+
+ <mat-card class="card">
+    <div class="card-title">
+      <strong>{{cardInfo?.title}}</strong>
+    </div>
+
+    <img mat-card-image [src]="cardInfo?.image?.url" [alt]="cardInfo?.title">
+    <mat-card-content>
+      <p class="price">
+        <span>قیمت : </span><span>{{cardInfo?.price
+          ? (cardInfo?.price | separateNumber) : 'قیمت توافقی' }} </span>
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="contact-btn">
+      <button mat-stroked-button color="accent">تماس</button>
+    </mat-card-actions>
+  </mat-card>
